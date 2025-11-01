@@ -1,0 +1,22 @@
+
+body {
+    background-color: white;
+    color: black;
+}
+header {
+    display: flex;
+    align-items: center;
+    background-color: orange;
+    color: aqua;
+    font-family: Arial;
+    justify-content: space-evenly;
+}
+.centered {
+    text-align: center;
+}
+.intro{
+    display:flex;
+    flex-direction: column-reverse;
+    max-width: 500;
+    text-align: center;
+}
