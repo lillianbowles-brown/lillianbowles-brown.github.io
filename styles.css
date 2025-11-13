@@ -1,8 +1,8 @@
-
 body {
     background-color: white;
     color: black;
 }
+
 header {
     display: flex;
     align-items: center;
@@ -11,12 +11,20 @@ header {
     font-family: Arial;
     justify-content: space-evenly;
 }
+
 .centered {
     text-align: center;
 }
-.intro{
-    display:flex;
+
+.intro {
+    display: flex;
     flex-direction: column-reverse;
     max-width: 500;
     text-align: center;
+}
+
+.main-image {
+    height: 300px;
+    width: 250px;
+    border-radius: 50%;
 }
