@@ -1,31 +1,224 @@
-body {
-    background-color: white;
-    color: black;
-}
-header {
-    display: flex;
-    align-items: center;
-    background-color: orange;
-    color: aqua;
-    font-family: Arial;
-    justify-content: space-evenly;
-}
-.centered {
-    text-align: center;
-}
-.intro {
-    display: flex;
-    flex-direction: column-reverse;
-    max-width: 500;
-    text-align: center;
-}
-.main-image {
-    height: 300px;
-    width: 250px;
-    border-radius: 50%;
+/* ---------- Global reset-ish ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* ---------- Base styles ---------- */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+  background-color: #f9f4ee; /* warm cream */
+  color: #222;
+}
+
+/* Links */
+a {
+  color: #2f3f49; /* muted deep blue */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  color: #2b3740; /* deep neutral */
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.7rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.75rem 1.25rem;
+  background-color: #3a4f59; /* deep blue-gray */
+  color: #ffffff;
+}
+
+.main-image {
+  height: 260px;
+  width: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e2c275; /* soft gold ring */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-text {
+  max-width: 480px;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.tagline {
+  margin-top: 0.45rem;
+  font-size: 0.98rem;
+  max-width: 26rem;
+  color: #f3efe8;
+}
+
+/* ---------- Main layout ---------- */
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem 2.25rem;
+}
+
+/* Sections as cards */
 section {
-    color:red;
-    padding-left: 30px;
+  background-color: #ffffff;
+  margin-top: 1.5rem;
+  padding: 1.5rem 1.4rem;
+  border-radius: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Paragraphs and lists */
+section p {
+  margin-top: 0.45rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+  margin-top: 0.4rem;
+}
+
+ul li + li {
+  margin-top: 0.2rem;
+}
+
+/* ---------- Intro section ---------- */
+.intro {
+  text-align: center;
+}
+
+.intro p {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button-style link (subtle) */
+.button-link {
+  display: inline-block;
+  margin-top: 0.85rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  background-color: #e2c275;   /* soft gold */
+  color: #2f3f49;              /* deep blue text */
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid #cfb25f;
+}
+
+.button-link:hover {
+  background-color: #d9b966;
+  text-decoration: none;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid #ddcec0;
+  background-color: #f2e8dd;
+  text-align: center;
+  padding: 1rem 1.5rem 1.6rem;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  font-weight: 600;
+}
+
+.footer-note {
+  margin-top: 0.45rem;
+  color: #555;
+}
+
+/* ---------- Quote Box ---------- */
+
+#quote-box {
+  background: #f3e3c8; /* calm, warm neutral */
+  color: #2f3f49;
+  padding: 1.6rem 1.4rem;
+  border-radius: 0.9rem;
+  text-align: center;
+  margin-top: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2c275;
+}
+
+#quote-box h2 {
+  color: #2b3740;
+  margin-bottom: 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+#quote-box p {
+  margin-top: 0.4rem;
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 700px) {
+  .site-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .main-image {
+    height: 220px;
+    width: 190px;
+  }
+
+  .header-text {
+    text-align: center;
+  }
+
+  .header-text h1 {
+    font-size: 1.7rem;
+  }
+
+  .tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  section {
+    padding: 1.3rem 1.1rem;
+  }
 }
